@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+  
+  <form id="formulario">
+    <h2>Formulario de Registro</h2>
+    <input type="text" name="nombre" placeholder="Nombre" required><br>
+    <input type="email" name="email" placeholder="Correo" required><br>
+    <input type="password" name="clave" placeholder="Contraseña" required><br>
+    <button type="submit">Registrar</button>
+  </form>
+
+  <script>
+    document.getElementById('formulario').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const datos = {
+        nombre: e.target.nombre.value,
+        email: e.target.email.value,
+        clave: e.target.clave.value
+      };
+
+      const res = await fetch('http://localhost:3000/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      });
+
+      const resultado = await res.json();
+      alert(resultado.mensaje);
+
+       // 👇 Limpia los campos del formulario
+    e.target.reset();
+    });
+  </script>
+</body>
+</html>
