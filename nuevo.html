@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nuevo.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Encabezado principal</h1>
+      </header>
+    <nav class="nav">
+        <ul class="nav-ul">
+            <li class="nav-li">
+                <a class="nav-link" href="#" id="inicio-link">Inicio</a>
+                <ul class="submenu" id="submenu-inicio">
+                    <li class="submenu-li">
+                        <a href="#" class="submenu-link">Opcion1</a>
+                    </li>
+                    <li class="submenu-li">
+                        <a href="#" class="submenu-link">Opcion2</a>
+                    </li>
+                    <li class="submenu-li">
+                        <a href="#" class="submenu-link">Opcion3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-li"><a class="nav-link" href="#" id="abrirModal">Acerca</a></li>
+            <li class="nav-li"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <!-- codigo de js para submenu -->
+    <script>
+        const inicioLink = document.getElementById('inicio-link');
+        const submenuInicio = document.getElementById('submenu-inicio');
+
+        inicioLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita que el enlace navegue
+            submenuInicio.classList.toggle('active'); // Alterna la clase 'active' para mostrar/ocultar el submenú
+        });
+
+        // Ocultar el submenú si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!inicioLink.contains(event.target) && !submenuInicio.contains(event.target)) {
+                submenuInicio.classList.remove('active');
+            }
+        });
+    </script>
+
+
+    <!-- cuerpo de la pagina -->
+    <main class="cuerpo">
+        <section class="bienvenida">
+          <h2 class="bienvenida-titulo">Bienvenidos a Nuestro Sitio!</h2>
+          <p class="bienvenida-contenido">Nos alegra tenerte por aqui. Explora lo que tenemos para ofrecer</p>
+        </section>
+
+        <section class="servicios">
+            <h2 class="servicios-titulo">Nuestros servicios</h2>
+            <div class="tarjeta-servicio">
+                <!-- article 1ro -->
+                <article class="servicio-article">
+                    <h3>Diseño web</h3>
+                    <p>Creacion de paginas modernas, responsivas y atractivas para tu negocio</p>
+                </article>
+                <!-- article 2do -->
+                <article class="servicio-article">
+                    <h3>Marketing digital</h3>
+                    <p>Impulsar tu presencia en línea con estrategias personalizadas</p>
+                </article>
+                <!-- article 3ro -->
+                 <article class="servicio-article">
+                 <h3>Soporte Tecnico</h3>
+                 <p>Asistencia confiable para mantener tu sistema funcionando sin problemas</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="testimonio">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <blockquote>
+                "Servicio excelente, atencion personalizada y resultados reales. ¡Muy recomendados!"
+            </blockquote>
+            <cite>- Ana Gómez, emprendedora</cite>
+        </section>
+
+        <!-- SECTION CONTACTO -->
+        <section id="contacto" class="contacto">
+            <h2>Contactanos</h2>
+            <p>¿Tienes alguna pregunta o quieres trabajar con nosotros? ¡Escribenos!</p>
+
+            <form>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required placeholder="John Zambrano"><br><br>
+
+                <label for="email">Correo electronico:</label><br>
+                <input type="email" id="email" name="email" required placeholder="john12@gmail.com"><br><br>
+
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea name="mensaje" id="mensaje" rows="5" required placeholder="Escribe tu mensaje aqui..."></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+      </main>
+
+      <!-- aqui va el footer -->
+      <footer>
+        <p> © 2025 Mi Sitio Web</p>
+      </footer>
+
+      <!-- MODAL ACERCA -->
+<div class="modal" id="modalAcerca">
+    <div class="modal-content">
+      <span class="close-btn" id="cerrarModal">&times;</span>
+      <h2>Acerca de Nosotros</h2>
+      <p>Somos un equipo comprometido con ofrecer soluciones digitales que se adapten a tus necesidades. Nuestro objetivo es ayudarte a destacar en línea 🚀</p>
+    </div>
+  </div>
+
+  <script>
+    const abrirModal = document.getElementById("abrirModal");
+    const modal = document.getElementById("modalAcerca");
+    const cerrarModal = document.getElementById("cerrarModal");
+  
+    abrirModal.addEventListener("click", function(e) {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  
+    cerrarModal.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+  
+    window.addEventListener("click", function(e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+  
+</body>
+</html>
