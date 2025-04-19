@@ -1,15 +1,17 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
-  }
-body{
-    font-family: Arial, Helvetica, sans-serif,sans-serif;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
@@ -18,24 +20,30 @@ body{
     min-height: 100vh;
 
 }
-.encabezado{
+
+.encabezado {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
-.nav{
+
+.nav {
     background-color: #444;
 }
-.nav-ul{
+
+.nav-ul {
+    position: relative;
     list-style: none;
     display: flex;
     justify-content: center;
 }
-.nav-li{
+
+.nav-li {
     margin: 0 20px;
 }
-.nav-link{
+
+.nav-link {
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -43,28 +51,36 @@ body{
     font-size: 1.3 rem;
     transition: background 0.3s;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     background-color: #555;
 }
 
 /* Estilos para el submenú */
 .submenu {
-    display: none; /* Ocultamos el submenú inicialmente */
+    display: none;
+    /* Ocultamos el submenú inicialmente */
     position: absolute;
-    top: 100%; /* Lo colocamos debajo del elemento padre (nav-li) */
+    top: 100%;
+    /* Lo colocamos debajo del elemento padre (nav-li) */
     left: 0;
-    background-color: #555; /* Un tono más oscuro que el nav */
+    background-color: #555;
+    /* Un tono más oscuro que el nav */
     padding: 0;
     margin: 0;
-    width: 150px; /* Ancho del submenú */
+    width: 150px;
+    /* Ancho del submenú */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Asegura que esté por encima de otros elementos */
-    text-align: left; /* Alinea el texto del submenú a la izquierda */
+    z-index: 10;
+    /* Asegura que esté por encima de otros elementos */
+    text-align: left;
+    /* Alinea el texto del submenú a la izquierda */
 }
 
 .submenu.active {
-    display: block; /* Mostramos el submenú cuando la clase 'active' está presente */
+    display: block;
+    /* Mostramos el submenú cuando la clase 'active' está presente */
 }
 
 .submenu-li {
@@ -73,50 +89,58 @@ body{
 
 .submenu-link {
     display: block;
-    padding: 10px 15px; /* Ajustamos el padding para que coincida con el nav */
+    padding: 10px 15px;
+    /* Ajustamos el padding para que coincida con el nav */
     color: #fff;
     text-decoration: none;
-    font-size: 1 rem; /* Un tamaño de fuente ligeramente menor */
+    font-size: 1 rem;
+    /* Un tamaño de fuente ligeramente menor */
     transition: background 0.3s;
 }
 
 .submenu-link:hover {
-    background-color: #777; /* Un tono más claro al pasar el ratón */
+    background-color: #777;
+    /* Un tono más claro al pasar el ratón */
 }
 
 /* estilos des cuerpo del contenido */
-.cuerpo{
+.cuerpo {
     padding: 20px;
     background-color: #fff;
     max-width: 1000px;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex: 1;
 }
-main>section{
+
+main>section {
     margin-bottom: 40px;
 }
-.bienvenida-titulo{
+
+.bienvenida-titulo {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 10px;
 }
-.bienvenida-contenido{
+
+.bienvenida-contenido {
     font-size: 1.1rem;
     color: #555;
 }
 
 /* SECTION SERVICIOS */
-.servicios-titulo{
+.servicios-titulo {
     margin-bottom: 20px;
 }
-.tarjetas-servicios{
+
+.tarjetas-servicios {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-.servicio-article{
+
+.servicio-article {
     flex: 1;
     min-width: 250px;
     background-color: #f9f9f9;
@@ -125,16 +149,18 @@ main>section{
     border-radius: 8px;
     transition: transform 0.2s
 }
-.servicio-article:hover{
+
+.servicio-article:hover {
     transform: translateY(-5px);
 }
-.servicio-article h3{
+
+.servicio-article h3 {
     margin-bottom: 10px;
     color: #0077cc;
 }
 
 /* SECTION DE TESTIMONIOS */
-.testimonio blockquote{
+.testimonio blockquote {
     font-style: italic;
     color: #444;
     border-left: 4px solid #ccc;
@@ -142,7 +168,7 @@ main>section{
     margin-bottom: 10px;
 }
 
-.testimonio cite{
+.testimonio cite {
     display: block;
     text-align: right;
     font-size: 0.9rem;
@@ -150,13 +176,16 @@ main>section{
 }
 
 /* SECTION DE CONTACTO */
-.contacto form{
+.contacto form {
     margin-top: 20px;
 }
-.contacto label{
+
+.contacto label {
     font-weight: bold;
 }
-.contacto input, .contacto textarea{
+
+.contacto input,
+.contacto textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -165,12 +194,17 @@ main>section{
     border-radius: 4px;
     font-size: 1rem;
 }
-.contacto textarea{
-    resize: vertical; /* Permite solo el redimensionamiento vertical */
-  max-height: 200px; /* Establece una altura máxima de 200 píxeles */
-  min-height: 100px; /* Establece una altura minima de 100 pixeles. */
+
+.contacto textarea {
+    resize: vertical;
+    /* Permite solo el redimensionamiento vertical */
+    max-height: 200px;
+    /* Establece una altura máxima de 200 píxeles */
+    min-height: 100px;
+    /* Establece una altura minima de 100 pixeles. */
 }
-.contacto button{
+
+.contacto button {
     background-color: #0077cc;
     color: #fff;
     border: none;
@@ -180,10 +214,12 @@ main>section{
     font-size: 1rem;
     transition: background 0.3s;
 }
-.contacto button:hover{
+
+.contacto button:hover {
     background-color: #005fa3;
 }
-footer{
+
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -200,32 +236,31 @@ footer{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fff;
     padding: 20px 30px;
     border-radius: 10px;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     text-align: center;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 24px;
     color: #888;
     cursor: pointer;
-  }
-  
-  .close-btn:hover {
+}
+
+.close-btn:hover {
     color: #000;
-  }
-  
+}
